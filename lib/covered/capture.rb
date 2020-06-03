@@ -42,11 +42,13 @@ module Covered
 		def enable
 			super
 			
-			@trace&.enable
+			# @trace&.enable
+			@trace && @trace.enable
 		end
 		
 		def disable
-			@trace&.disable
+			# @trace&.disable
+			@trace && @trace.disable
 			
 			super
 		end

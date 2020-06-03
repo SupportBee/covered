@@ -179,7 +179,8 @@ module Covered
 						file.each_line do |line|
 							range = Range.new([line_offset - before, 0].max, line_offset+after)
 							
-							if counts[range]&.include?(0)
+							# if counts[range]&.include?(0)
+							if counts[range] && counts[range].include?(0)
 								count = counts[line_offset]
 								
 								if last_line and last_line != line_offset-1
